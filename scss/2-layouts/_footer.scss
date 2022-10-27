@@ -1,0 +1,80 @@
+@use "../1-base/variables" as bv;
+@use "../1-base/base-mixin" as bb;
+@use "layout-mixins" as lm;
+
+.footer {
+  background: bv.$bg-color;
+  padding: 3rem 0;
+
+  a,
+  p {
+    color: bv.$gray-text-color;
+  }
+
+  li,
+  p {
+    margin-bottom: 1rem;
+
+    a {
+      &:hover {
+        color: bv.$primary-color;
+      }
+    }
+  }
+
+  i {
+    margin-right: 0.3rem;
+  }
+
+  h3 {
+    color: bv.$light-color;
+    text-transform: uppercase;
+    font-size: 1.75rem;
+    color: bv.$primary-color;
+    margin-bottom: 1.5rem;
+  }
+
+  &-top {
+    @include lm.center-content;
+    padding-bottom: 3rem;
+
+    @include bb.mobile {
+      flex-direction: column;
+    }
+
+    &-about,
+    &-categories,
+    &-information,
+    &-menu {
+      max-width: 25%;
+
+      @include bb.mobile {
+        max-width: 100%;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &-bottom {
+    @include lm.center-content;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    &-payments {
+      margin-bottom: 2rem;
+
+      i {
+        color: bv.$dark-color;
+        cursor: pointer;
+        font-size: 3rem;
+        margin: 5px;
+        transition: 0.4s;
+
+        &:hover {
+          color: bv.$primary-color;
+        }
+      }
+    }
+  }
+}

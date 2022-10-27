@@ -1,0 +1,37 @@
+@use "variables" as v;
+
+html {
+  font-size: 14px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans";
+  font-size: 1rem;
+}
+
+i {
+  color: v.$primary-color;
+}
+
+a {
+  display: inline-block;
+  max-width: max-content;
+  text-decoration: none;
+  transition: 0.4s;
+
+  &:hover {
+    color: v.$primary-color;
+  }
+}
+
+input {
+  border: none;
+  outline: none;
+}
+
+ul {
+  list-style: none;
+}

@@ -1,0 +1,26 @@
+@use "../1-base/variables" as bv;
+
+.btn {
+  padding: 8px 15px;
+  height: 40px;
+  color: bv.$light-color;
+  border-radius: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background: bv.$primary-color;
+  cursor: pointer;
+  outline: none;
+  border: 2px solid bv.$primary-color;
+  transition: 0.4s;
+
+  &:hover {
+    background: bv.$light-color;
+    color: bv.$primary-color;
+  }
+
+  &-half {
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    text-transform: none;
+  }
+}

@@ -1,0 +1,62 @@
+@use "../1-base/variables" as bv;
+@use "../1-base/base-mixin" as bb;
+@use "layout-mixins" as lm;
+
+.newsletter-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem;
+  border-top: 2px solid bv.$section-bg-color;
+
+  @include bb.mobile {
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 2rem;
+    color: bv.$dark-color;
+    margin-bottom: 2rem;
+
+    span {
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+
+  form {
+    display: flex;
+    margin-bottom: 3rem;
+
+    @include bb.mobile {
+      width: 100%;
+    }
+
+    input[type="email"] {
+      border: 1px solid bv.$section-bg-color;
+      @include lm.rounded-input;
+
+      @include bb.mobile {
+        width: 100%;
+      }
+    }
+  }
+
+  .social-media {
+    i {
+      padding: 12px;
+      margin: 5px;
+      border: 1px solid bv.$section-bg-color;
+      cursor: pointer;
+      color: bv.$dark-color;
+      transition: 0.4s;
+
+      &:hover {
+        color: bv.$primary-color;
+        background: bv.$section-bg-color;
+      }
+    }
+  }
+}
